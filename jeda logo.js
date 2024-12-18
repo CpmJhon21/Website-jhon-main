@@ -9,4 +9,4 @@ setTimeout(() => {
     const splash = document.getElementById('splash');
     splash.classList.remove('visible'); // Sembunyikan splash screen
     splash.classList.add('hidden');    // Pastikan tidak muncul lagi
-}, 4000); // 50 detik (10 detik untuk muncul + 40 detik aktif)
+}, 4200); // 50 detik (10 detik untuk muncul + 40 detik aktif)
