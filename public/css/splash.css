@@ -1,0 +1,134 @@
+/* Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* Splash Screen */
+#splash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+#splash h1 {
+    margin-top: 1rem;
+    font-size: 2rem;
+    animation: fadeIn 2s ease-in-out;
+    animation-delay: 2s;
+}
+
+/* Logo dengan Efek 3D Rotasi */
+.logo-container {
+    perspective: 1000px;
+    margin-bottom: 2rem;
+}
+
+.rotating-logo {
+    width: 150px;
+    animation: rotate3D 4s infinite linear;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes rotate3D {
+    0% {
+        transform: rotateY(0);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Loading Bar */
+#loading-bar-container {
+    width: 70%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+#loading-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(to right, #ff7eb3, #00c6ff, #7effb2);
+    animation: load 10s linear forwards;
+}
+
+@keyframes load {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Gelombang */
+.wave-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    animation: wave 5s infinite linear;
+}
+
+.wave:nth-child(2) {
+    animation-delay: 2.5s;
+    opacity: 0.6;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+      }
+}
+
+/* Partikel */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+/* Fade In Animasi */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+      
