@@ -1,0 +1,141 @@
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Cara Memesan Pesanan
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .progress-bar {
+            width: 0;
+            height: 4px;
+            background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+            animation: load 3s forwards;
+        }
+        @keyframes load {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+  </style>
+ </head>
+ <body class="bg-gray-100 relative">
+  <div id="splash-screen" class="fixed inset-0 bg-white flex items-center justify-center z-50">
+   <div class="text-center">
+    <h1 class="text-2xl font-bold mb-4">
+     Memuat...
+    </h1>
+    <div class="w-64 bg-gray-200 rounded-full overflow-hidden">
+     <div class="progress-bar">
+     </div>
+    </div>
+   </div>
+  </div>
+  <video autoplay loop muted class="absolute inset-0 w-full h-full object-cover z-0">
+   <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4"/>
+   Your browser does not support the video tag.
+  </video>
+  <div class="relative z-10 bg-black bg-opacity-50 min-h-screen flex flex-col">
+   <header class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+     <h1 class="text-2xl font-bold">
+      Cpm_Jhon
+     </h1>
+     <nav>
+      <ul class="flex space-x-4">
+       <li>
+        <a class="hover:underline" href="index.html">
+         Beranda
+        </a>
+       </li>
+      </ul>
+     </nav>
+    </div>
+   </header>
+   <main class="container mx-auto p-4 flex-grow">
+    <section class="bg-white p-6 rounded shadow-md mb-6">
+     <h2 class="text-xl font-bold mb-4">
+      Langkah-langkah Memesan Pesanan
+     </h2>
+     <ol class="list-decimal list-inside space-y-4">
+      <li class="flex items-start">
+       <img alt="Gambar halaman beranda website" class="w-24 h-24 mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/0I4f5hFNMEXgHSrw3XExxo7rhh9MWi8VgVA6CmafmSLtKW8TA.jpg" width="100"/>
+       <div>
+        <h3 class="font-bold">
+         1. Kunjungi Halaman Beranda
+        </h3>
+        <p>
+         Kunjungi halaman beranda website kami untuk melihat produk dan layanan yang tersedia.
+        </p>
+       </div>
+      </li>
+      <li class="flex items-start">
+       <img alt="Gambar halaman produk" class="w-24 h-24 mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/d5yavTod6nIsF9xrh3TedokpvqXM3AGBAB6WCRNdLzgTFLeTA.jpg" width="100"/>
+       <div>
+        <h3 class="font-bold">
+         2. Pilih Produk
+        </h3>
+        <p>
+         Pilih produk yang ingin Anda pesan dari katalog produk kami.
+        </p>
+       </div>
+      </li>
+      <li class="flex items-start">
+       <img alt="Gambar halaman keranjang belanja" class="w-24 h-24 mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/36AnygXfmmwPfkMWxweOwE5XrE4NRpISO8np349hnf2sqYxPB.jpg" width="100"/>
+       <div>
+        <h3 class="font-bold">
+         3. Pergi ke Menu Chat
+        </h3>
+        <p>
+         Masukan Pesana Anda Dan Nomor WhatsApp,Gmail Dan Password Game Anda.
+        </p>
+       </div>
+      </li>
+      <li class="flex items-start">
+       <img alt="Gambar halaman checkout" class="w-24 h-24 mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/DTeAuze0MUvh8E402QkbEXdViPdzQ8wIPJcAKt9ehaoMVs4nA.jpg" width="100"/>
+       <div>
+        <h3 class="font-bold">
+         4.  Tunggu Proses 
+        </h3>
+        <p>
+         Pesanan Anda yang anda kirim barusan bakalan masuk ke dalam gmail owner cpm_Jhon Dan tunggu pengerjaannya Akun anda.
+        </p>
+       </div>
+      </li>
+      <li class="flex items-start">
+       <img alt="Gambar konfirmasi pesanan" class="w-24 h-24 mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/qDIrRfkrjpXPdyx7eEM3HnHjR5vrM0bbB7WPEReBsupTVs4nA.jpg" width="100"/>
+       <div>
+        <h3 class="font-bold">
+         5. Konfirmasi Pesanan
+        </h3>
+        <p>
+         Konfirmasi pesanan Anda dan tunggu Sampai Owner Kami Chat Untuk Kirim email Dan Pembayaran.
+        </p>
+       </div>
+      </li>
+     </ol>
+    </section>
+   </main>
+   <footer class="bg-blue-600 text-white p-4 mt-6">
+    <div class="container mx-auto text-center">
+     <p>
+      © 2017 Cpm_Jhon. All rights reserved.
+     </p>
+    </div>
+   </footer>
+  </div>
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+            document.getElementById('splash-screen').style.display = 'none';
+        }, 3000);
+    });
+  </script>
+ </body>
+</html>
