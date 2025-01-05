@@ -1,20 +1,32 @@
-function initMap() {
-            var tokoZeeone = {lat: -6.200000, lng: 106.816666}; // Replace with the actual coordinates
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 15,
-                center: tokoZeeone
-            });
-            var marker = new google.maps.Marker({
-                position: tokoZeeone,
-                map: map,
-                title: 'Toko Zeeone'
-            });
+const express = require('express');
+const bodyParser = require('body-parser');
+const fs = require('fs'); // Untuk menyimpan data ke file JSON
+const app = express();
 
-            var infoWindow = new google.maps.InfoWindow({
-                content: '<p class="text-black font-semibold">Toko Zeeone</p><a class="text-blue-600 text-sm" href="#">Lihat peta lebih besar</a>'
-            });
+app.use(bodyParser.json());
 
-            marker.addListener('click', function() {
-                infoWindow.open(map, marker);
-            });
-        }
+// Endpoint untuk menerima webhook dari Saweria
+app.post('/webhook-saweria', (req, res) => {
+    const donation = req.body; // Data donasi dari Saweria
+    saveDonation(donation);
+    res.status(200).send('Webhook diterima');
+});
+
+// Endpoint untuk menerima IPN dari PayPal
+app.post('/webhook-paypal', (req, res) => {
+    const donation = req.body; // Data transaksi dari PayPal
+    saveDonation(donation);
+    res.status(200).send('IPN diterima');
+});
+
+// Simpan data donasi ke file JSON
+function saveDonation(donation) {
+    const dataFile = 'donations.json';
+    const donations = JSON.parse(fs.readFileSync(dataFile, 'utf8'));
+    donations.push(donation);
+    fs.writeFileSync(dataFile, JSON.stringify(donations, null, 2));
+}
+
+app.listen(3000, () => {
+    console.log('Server berjalan di port 3000');
+});
