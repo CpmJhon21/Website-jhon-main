@@ -1,0 +1,169 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   My Support
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+   }
+   #splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+    transition: opacity 0.5s ease;
+   }
+   #splash-screen.hidden {
+    opacity: 0;
+    pointer-events: none;
+   }
+   #splash-screen video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+   }
+   .loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #fff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+   }
+   @keyframes spin {
+    0% {
+     transform: rotate(0deg);
+    }
+    100% {
+     transform: rotate(360deg);
+    }
+   }
+  </style>
+ </head>
+ <body class="font-roboto bg-gray-100 relative">
+  <div id="splash-screen">
+   <video autoplay="" loop="" muted="">
+    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4"/>
+    Your browser does not support the video tag.
+   </video>
+   <div class="text-center content">
+    <h1 class="text-4xl font-bold mb-4">
+     My Support
+    </h1>
+    <div class="loader mb-4">
+    </div>
+    <p class="text-lg">
+     Loading...
+    </p>
+   </div>
+  </div>
+  <header class="relative z-10 hidden">
+   <video autoplay="" class="absolute top-0 left-0 w-full h-full object-cover z-[-2]" loop="" muted="">
+    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4"/>
+    Your browser does not support the video tag.
+   </video>
+   <div class="text-white p-4 relative z-10">
+    <div class="container mx-auto flex justify-between items-center">
+     <h1 class="text-2xl font-bold">
+      My Support
+     </h1>
+     <nav>
+      <ul class="flex space-x-4">
+       <li>
+        <a class="hover:underline rounded-lg border border-white p-2" href="index.html">
+         Home
+        </a>
+       </li>
+      </ul>
+     </nav>
+    </div>
+   </div>
+  </header>
+  <main class="container mx-auto p-4 relative z-10 hidden">
+   <section class="bg-white p-6 rounded-lg shadow-lg">
+    <h2 class="text-xl font-bold mb-4">
+     Support Team
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+     <div class="text-center">
+      <img alt="Portrait of a support team member with a friendly smile" class="w-32 h-32 mx-auto rounded-full" src="./images/cpm_han.jpg"/>
+      <h3 class="mt-2 text-lg font-semibold">
+       cpm_han
+      </h3>
+      <p class="text-gray-600">
+       Support Specialist
+      </p>
+     </div>
+     <div class="text-center">
+      <img alt="Portrait of a support team member with a friendly smile" class="w-32 h-32 mx-auto rounded-full" src="./images/cpm_bees.jpg"/>
+      <h3 class="mt-2 text-lg font-semibold">
+       Bees_cpm
+      </h3>
+      <p class="text-gray-600">
+       Customer Service
+      </p>
+     </div>
+     <div class="text-center">
+      <img alt="Portrait of a support team member with a friendly smile" class="w-32 h-32 mx-auto rounded-full" src="./images/cangsat.jpg"/>
+      <h3 class="mt-2 text-lg font-semibold">
+       cangst_cpm
+      </h3>
+      <p class="text-gray-600">
+       Technical Support
+      </p>
+     </div>
+     <div class="text-center">
+      <img alt="Portrait of a support team member with a friendly smile" class="w-32 h-32 mx-auto rounded-full" src="./images/cpm_rafli.jpg"/>
+      <h3 class="mt-2 text-lg font-semibold">
+       cpm_rafli
+      </h3>
+      <p class="text-gray-600">
+       Support Engineer
+      </p>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="bg-blue-600 text-white p-4 mt-6 relative z-10 hidden">
+   <div class="container mx-auto text-center">
+    <p>
+     © 2023 My Support. All rights reserved.
+    </p>
+   </div>
+  </footer>
+  <script>
+   document.addEventListener("DOMContentLoaded", function() {
+     setTimeout(function() {
+       document.getElementById("splash-screen").classList.add("hidden");
+       document.querySelector("header").classList.remove("hidden");
+       document.querySelector("main").classList.remove("hidden");
+       document.querySelector("footer").classList.remove("hidden");
+     }, 2000);
+   });
+  </script>
+ </body>
+</html>
