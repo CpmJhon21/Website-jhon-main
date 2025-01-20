@@ -21145,25 +21145,27 @@ div.tagsinput {
   justify-content: center; /* Pusat horizontal */
   align-items: center; /* Pusat vertikal */
   background-color: #b3d9ff; /* Biru laut */
-  padding: 40px; /* Memberikan ruang di sekitar container */
+  padding: 20px; /* Mengurangi padding agar latar belakang lebih kecil */
   border-radius: 10px; /* Membulatkan sudut */
   box-sizing: border-box; /* Termasuk padding dalam ukuran total */
-}
-
-.map-container iframe {
-  border-radius: 10px;
-  width: 70%; /* Lebar sedang, sesuaikan dengan kebutuhan */
-  height: 70vh; /* Tinggi sedang, proporsional */
-  border: 0;
-  max-width: 1000px; /* Membatasi lebar maksimal */
+  width: 90%; /* Lebar container disesuaikan agar tidak terlalu besar */
+  margin: auto; /* Memusatkan container secara horizontal */
 }
 
 /* Responsif untuk layar kecil */
 @media (max-width: 768px) {
-  .map-container iframe {
-    width: 90%; /* Sesuaikan lebar dengan layar kecil */
-    height: 50vh; /* Sesuaikan tinggi di perangkat kecil */
+  .map-container {
+    width: 100%; /* Lebar penuh pada perangkat kecil */
+    padding: 10px; /* Mengurangi padding pada layar kecil */
   }
+}
+
+.map-container iframe {
+  border-radius: 10px;
+  width: 80%; /* Lebar sedang untuk iframe */
+  height: 60vh; /* Sesuaikan tinggi untuk tampilan yang lebih seimbang */
+  border: 0;
+  max-width: 800px; /* Batas maksimal lebar iframe */
 }
 
 /*# sourceMappingURL=maps/style.css.map */
