@@ -21140,14 +21140,6 @@ div.tagsinput {
     width: 100%;
     height: auto;}
 
-body {
-            background-color: #1a1a1a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
         .map-container {
             background-color: #2a2a2a;
             padding: 10px;
