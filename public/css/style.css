@@ -21142,16 +21142,28 @@ div.tagsinput {
 
 .map-container {
   display: flex;
-  justify-content: start; /* Pusat horizontal */
-  align-items: start; /* Pusat vertikal */
-  height: auto; /* Sesuaikan tinggi container */
+  justify-content: center; /* Memusatkan horizontal */
+  align-items: center; /* Memusatkan vertikal */
+  min-height: 100vh; /* Memastikan container memenuhi tinggi layar */
+  background-color: #b3d9ff; /* Warna latar belakang */
+  padding: 20px; /* Jaga jarak dari tepi layar */
+  box-sizing: border-box; /* Termasuk padding dalam ukuran total */
 }
 
 .map-container iframe {
-  border-radius: 10px;
-  width: 80%; /* Sesuaikan dengan kebutuhan */
-  height: auto;
-  border: 0;
+  border-radius: 10px; /* Sudut membulat */
+  width: 300px; /* Lebar kotak */
+  height: 300px; /* Tinggi kotak */
+  border: 0; /* Hapus border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Bayangan untuk estetika */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .map-container iframe {
+    width: 250px; /* Lebar untuk perangkat kecil */
+    height: 250px; /* Tinggi untuk perangkat kecil */
+  }
 }
 
 
