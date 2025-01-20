@@ -21144,7 +21144,7 @@ div.tagsinput {
   display: flex;
   justify-content: center; /* Pusat horizontal */
   align-items: center; /* Pusat vertikal */
-  height: 50vh; /* Sesuaikan tinggi container */
+  height: 480vh; /* Sesuaikan tinggi container */
 }
 
 .map-container iframe {
