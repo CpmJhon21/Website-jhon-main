@@ -21142,15 +21142,15 @@ div.tagsinput {
 
 .map-container {
   display: flex;
-  justify-content: start; /* Pusat horizontal */
-  align-items: start; /* Pusat vertikal */
+  justify-content: center; /* Pusat horizontal */
+  align-items: center; /* Pusat vertikal */
   height: 100vh; /* Sesuaikan tinggi container */
 }
 
 .map-container iframe {
   border-radius: 10px;
   width: 80%; /* Sesuaikan dengan kebutuhan */
-  height: 450px;
+  height: 100px;
   border: 0;
 }
 
