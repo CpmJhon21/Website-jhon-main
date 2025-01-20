@@ -21140,5 +21140,12 @@ div.tagsinput {
     width: 100%;
     height: auto;}
 
+.map-container iframe {
+  border-radius: 10px;
+  width: 100%;
+  height: 450px;
+  border: 0;
+}
+
 
 /*# sourceMappingURL=maps/style.css.map */
