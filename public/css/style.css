@@ -21144,7 +21144,7 @@ div.tagsinput {
   display: flex;
   justify-content: center; /* Pusat horizontal */
   align-items: center; /* Pusat vertikal */
-  background-color: #b3d9ff; /* Biru laut */
+  background-color: #1a1a1a; /* Biru laut */
   padding: 20px; /* Mengurangi padding agar latar belakang lebih kecil */
   border-radius: 10px; /* Membulatkan sudut */
   box-sizing: border-box; /* Termasuk padding dalam ukuran total */
