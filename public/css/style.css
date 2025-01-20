@@ -21140,8 +21140,8 @@ div.tagsinput {
     width: 100%;
     height: auto;}
 
-        .map-container {
-            display: flex;
+  .map-container {
+  display: flex;
   justify-content: center; /* Pusat horizontal */
   align-items: center; /* Pusat vertikal */
   background-color: #b3d9ff; /* Biru laut */
@@ -21160,8 +21160,8 @@ div.tagsinput {
   }
 }
 
-.map {
-            border-radius: 10px;
+.map-container iframe {
+  border-radius: 10px;
   width: 80%; /* Lebar sedang untuk iframe */
   height: 60vh; /* Sesuaikan tinggi untuk tampilan yang lebih seimbang */
   border: 0;
