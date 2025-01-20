@@ -21140,30 +21140,19 @@ div.tagsinput {
     width: 100%;
     height: auto;}
 
-.container {
-            background-color: #ffffff;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 270px;
-        }
-        
-        .map-container {
-            margin-top: 10px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .map-container iframe {
-            width: 100%;
-            height: 200px;
-            border: none;
-        }
-        
-        h5 {
-            color: #4a4a4a;
-            font-weight: bold;
-            margin: 0;
-        }
+.map-container {
+  display: flex;
+  justify-content: start; /* Pusat horizontal */
+  align-items: flex-start; /* Pusat vertikal */
+  height: 100vh; /* Sesuaikan tinggi container */
+}
+
+.map-container iframe {
+  border-radius: 10px;
+  width: 80%; /* Sesuaikan dengan kebutuhan */
+  height: 450px;
+  border: 0;
+}
 
 
 
