@@ -21143,7 +21143,7 @@ div.tagsinput {
 .map-container {
   display: flex;
   justify-content: start; /* Pusat horizontal */
-  align-items: flex-start; /* Pusat vertikal */
+  align-items: start; /* Pusat vertikal */
   height: 100vh; /* Sesuaikan tinggi container */
 }
 
