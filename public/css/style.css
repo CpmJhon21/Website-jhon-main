@@ -21144,13 +21144,13 @@ div.tagsinput {
   display: flex;
   justify-content: center; /* Pusat horizontal */
   align-items: center; /* Pusat vertikal */
-  height: 100vh; /* Sesuaikan tinggi container */
+  height: 50vh; /* Sesuaikan tinggi container */
 }
 
 .map-container iframe {
   border-radius: 10px;
   width: 80%; /* Sesuaikan dengan kebutuhan */
-  height: 100px;
+  height: 480px;
   border: 0;
 }
 
