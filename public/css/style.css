@@ -21141,16 +21141,30 @@ div.tagsinput {
     height: auto;}
 
         .map-container {
-            background-color: #2a2a2a;
-            padding: 10px;
-            border-radius: 10px;
             display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .map {
-            width: 250px;
-            height: 250px;
-            border: none;
-        }
+  justify-content: center; /* Pusat horizontal */
+  align-items: center; /* Pusat vertikal */
+  background-color: #b3d9ff; /* Biru laut */
+  padding: 20px; /* Mengurangi padding agar latar belakang lebih kecil */
+  border-radius: 10px; /* Membulatkan sudut */
+  box-sizing: border-box; /* Termasuk padding dalam ukuran total */
+  width: 90%; /* Lebar container disesuaikan agar tidak terlalu besar */
+  margin: auto; /* Memusatkan container secara horizontal */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .map-container {
+    width: 100%; /* Lebar penuh pada perangkat kecil */
+    padding: 10px; /* Mengurangi padding pada layar kecil */
+  }
+}
+
+.map {
+            border-radius: 10px;
+  width: 80%; /* Lebar sedang untuk iframe */
+  height: 60vh; /* Sesuaikan tinggi untuk tampilan yang lebih seimbang */
+  border: 0;
+  max-width: 800px; /* Batas maksimal lebar iframe */
+}
 /*# sourceMappingURL=maps/style.css.map */
