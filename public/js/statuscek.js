@@ -8,7 +8,7 @@ function updateConnectionStatus() {
         closePopup();
 
         // Jika sebelumnya dialihkan ke game dinosaurus, kembali ke halaman utama
-        if (localStorage.getItem('redirectedToDino')) {
+        if (localStorage.getItem('https://elgoog.im/dinosaur-game/')) {
             localStorage.removeItem('https://elgoog.im/dinosaur-game/'); // Hapus status redirect
             window.location.href = localStorage.getItem('lastPage') || "https://cpm-jhon.my.id"; // Kembali ke halaman utama
         }
