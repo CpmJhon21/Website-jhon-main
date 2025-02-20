@@ -7,8 +7,7 @@ router.get('/server/status', async (req, res) => {
     try {
         // Daftar server yang akan dicek
         const servers = [
-            { name: 'Server 1', url: 'https://example1.com' },
-            { name: 'Server 2', url: 'https://example2.com' }
+            { name: 'Server 1', url: 'https://cpm-jhon.my.id' }    
         ];
 
         let totalServers = servers.length;
