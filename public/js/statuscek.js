@@ -1,11 +1,17 @@
 // Fungsi untuk memperbarui status koneksi
 function updateConnectionStatus() {
     const statusText = document.getElementById('status-text');
-    
+
     if (navigator.onLine) {
         statusText.textContent = "Online ✅";
         statusText.style.color = "green";
         closePopup();
+
+        // Jika sebelumnya dialihkan ke game dinosaurus, kembali ke halaman utama
+        if (localStorage.getItem('redirectedToDino')) {
+            localStorage.removeItem('redirectedToDino'); // Hapus status redirect
+            window.location.href = localStorage.getItem('lastPage') || "/"; // Kembali ke halaman utama
+        }
     } else {
         statusText.textContent = "Offline ❌";
         statusText.style.color = "red";
@@ -16,9 +22,15 @@ function updateConnectionStatus() {
 // Fungsi untuk menampilkan pop-up saat offline
 function showOfflinePopup() {
     document.getElementById("offline-popup").style.display = "block";
+    
+    // Simpan halaman terakhir sebelum dialihkan
+    localStorage.setItem('lastPage', window.location.href);
+
+    // Setelah 5 detik, alihkan ke game dinosaurus
     setTimeout(() => {
+        localStorage.setItem('redirectedToDino', true); // Tandai bahwa dialihkan
         window.location.href = "https://elgoog.im/dinosaur-game/";
-    }, 5000); // Arahkan ke game dinosaurus setelah 5 detik
+    }, 5000);
 }
 
 // Fungsi untuk menutup pop-up
