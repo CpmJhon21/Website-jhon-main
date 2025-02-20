@@ -1,7 +1,7 @@
 window.addEventListener("online", () => {
     alert("Kamu kembali online ✅");
-    if (localStorage.getItem("redirectedToDino")) {
-        localStorage.removeItem("redirectedToDino");
+    if (localStorage.getItem("https://cpm-jhon.my.id")) {
+        localStorage.removeItem("https://elgoog.im/dinosaur-game/");
         window.location.href = localStorage.getItem("lastPage") || "/";
     }
 });
