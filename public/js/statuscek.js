@@ -10,7 +10,7 @@ function updateConnectionStatus() {
         // Jika sebelumnya dialihkan ke game dinosaurus, kembali ke halaman utama
         if (localStorage.getItem('redirectedToDino')) {
             localStorage.removeItem('redirectedToDino'); // Hapus status redirect
-            window.location.href = localStorage.getItem('lastPage') || "/"; // Kembali ke halaman utama
+            window.location.href = localStorage.getItem('lastPage') || "https://cpm-jhon.my.id"; // Kembali ke halaman utama
         }
     } else {
         statusText.textContent = "Offline ❌";
