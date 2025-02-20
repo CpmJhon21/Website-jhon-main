@@ -3,9 +3,6 @@ window.addEventListener("online", () => {
     if (localStorage.getItem("redirectedToDino")) {
         localStorage.removeItem("redirectedToDino");
         window.location.href = localStorage.getItem("lastPage") || "/";
-        localStorage.setItem("lastPage", window.location.href);
-        window.location.href = "https://cpm-jhon.my.id";
-    }, 5000);
     }
 });
 
