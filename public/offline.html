@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tidak Ada Internet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>⚠ Tidak Ada Koneksi Internet</h1>
+        <p>Silakan cek koneksi Anda.</p>
+        <button onclick="cekKoneksi()">Coba Lagi</button>
+    </div>
+    <script>
+        function cekKoneksi() {
+            if (navigator.onLine) {
+                window.location.href = "/";
+            } else {
+                alert("Masih offline. Periksa koneksi Anda.");
+            }
+        }
+    </script>
+</body>
+</html>
