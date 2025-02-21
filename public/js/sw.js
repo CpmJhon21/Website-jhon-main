@@ -1,22 +1,19 @@
 const CACHE_NAME = "offline-cache-v1";
 const OFFLINE_URL = "offline.html";
 
-// Instal Service Worker dan simpan halaman offline ke cache
+// Instalasi Service Worker
 self.addEventListener("install", (event) => {
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => {
-            return cache.addAll([OFFLINE_URL]);
+            return cache.addAll([OFFLINE_URL, "css/offline.css", "js/status.js"]);
         })
     );
+    self.skipWaiting();
 });
 
-// Intercept request untuk menampilkan halaman offline jika tidak ada koneksi
+// Ambil permintaan dan arahkan ke cache jika offline
 self.addEventListener("fetch", (event) => {
-    if (!navigator.onLine) {
-        event.respondWith(
-            caches.match(OFFLINE_URL).then((response) => {
-                return response || fetch(event.request);
-            })
-        );
-    }
+    event.respondWith(
+        fetch(event.request).catch(() => caches.match(OFFLINE_URL))
+    );
 });
