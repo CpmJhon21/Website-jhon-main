@@ -1,6 +1,6 @@
 // Daftarkan Service Worker
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/js/sw.js')
+    navigator.serviceWorker.register('js/sw.js')
         .then(() => console.log("Service Worker terdaftar"))
         .catch((err) => console.error("Service Worker gagal:", err));
 }
@@ -18,7 +18,7 @@ function cekStatusKoneksi() {
 // Event listener perubahan koneksi
 window.addEventListener("online", cekStatusKoneksi);
 window.addEventListener("offline", () => {
-    window.location.href = "offline.html"; // Arahkan ke halaman offline saat kehilangan koneksi
+    window.location.href = "public/offline.html"; // Arahkan ke halaman offline saat kehilangan koneksi
 });
 
 // Cek status koneksi saat halaman dimuat
