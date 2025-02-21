@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tidak Ada Internet</title>
+    <title>Kamu Sedang Offline</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>⚠ Tidak Ada Koneksi Internet</h1>
-        <p>Silakan cek koneksi Anda.</p>
-        <button onclick="cekKoneksi()">Coba Lagi</button>
-    </div>
+    <h1>⚠ Kamu sedang offline!</h1>
+    <p>Silakan periksa koneksi internet dan coba lagi.</p>
+    <button onclick="cekKoneksi()">Coba Lagi</button>
+
     <script>
         function cekKoneksi() {
             if (navigator.onLine) {
                 window.location.href = "/";
             } else {
-                alert("Masih offline. Periksa koneksi Anda.");
+                alert("Masih offline! Periksa koneksi internet.");
             }
         }
+
+        window.addEventListener("online", () => {
+            alert("Koneksi kembali! Memuat ulang halaman...");
+            window.location.href = "/";
+        });
     </script>
 </body>
 </html>
