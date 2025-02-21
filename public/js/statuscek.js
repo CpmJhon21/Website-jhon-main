@@ -18,7 +18,7 @@ function cekStatusKoneksi() {
 // Event listener perubahan koneksi
 window.addEventListener("online", cekStatusKoneksi);
 window.addEventListener("offline", () => {
-    window.location.href = "public/offline.html"; // Arahkan ke halaman offline saat kehilangan koneksi
+    window.location.href = "index20.html"; // Arahkan ke halaman offline saat kehilangan koneksi
 });
 
 // Cek status koneksi saat halaman dimuat
