@@ -21168,27 +21168,38 @@ div.tagsinput {
   max-width: 800px; /* Batas maksimal lebar iframe */
 }
 
-.status-container {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    width: 250px;
-    font-family: Arial, sans-serif;
-}
-
-.network-status, .server-status, .server-uptime {
-    margin: 5px 0;
-}
-
-.online {
-    color: green;
+.status {
+    font-size: 20px;
     font-weight: bold;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* Warna indikator */
+.online {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
 }
 
 .offline {
-    color: red;
-    font-weight: bold;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.server-down {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+
+/* Uptime */
+.uptime {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #555;
 }
 
 
