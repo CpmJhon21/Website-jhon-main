@@ -13,7 +13,7 @@ app.use(express.static("public"))
 
 // Rute utama
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, "./index.html"));
 });
 
 // Rute offline
