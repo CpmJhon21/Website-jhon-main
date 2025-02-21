@@ -1,25 +1,17 @@
-// Daftarkan Service Worker
-if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('js/sw.js')
-        .then(() => console.log("Service Worker terdaftar"))
-        .catch((err) => console.error("Service Worker gagal:", err));
-}
-
-// Fungsi cek status koneksi
+// Fungsi untuk mengecek status koneksi
 function cekStatusKoneksi() {
     if (navigator.onLine) {
-        console.log("Koneksi Online");
-        location.reload(); // Kembali ke website jika online
+        alert("Kamu kembali online!"); 
+        window.location.href = "/"; // Kembali ke halaman utama
     } else {
-        console.log("Koneksi Offline");
+        alert("Kamu sedang offline!"); 
+        window.location.href = "offline.html"; // Pindah ke halaman offline
     }
 }
 
-// Event listener perubahan koneksi
+// Event listener perubahan status jaringan
 window.addEventListener("online", cekStatusKoneksi);
-window.addEventListener("offline", () => {
-    window.location.href = "offline.html"; // Arahkan ke halaman offline saat kehilangan koneksi
-});
+window.addEventListener("offline", cekStatusKoneksi);
 
-// Cek status koneksi saat halaman dimuat
+// Cek status saat pertama kali masuk ke website
 document.addEventListener("DOMContentLoaded", cekStatusKoneksi);
