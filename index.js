@@ -13,12 +13,12 @@ app.use(express.static("public"))
 
 // Rute utama
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "public/index20.html"));
+    res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
 // Rute offline
 app.get("/offline", (req, res) => {
-    res.sendFile(path.join(__dirname, "public/offline.html"));
+    res.sendFile(path.join(__dirname, "./public/offline.html"));
 });
 
 // Jalankan server
