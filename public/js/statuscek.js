@@ -1,42 +1,41 @@
-function updateNetworkStatus() {
-    const networkText = document.getElementById("network-text");
-    if (navigator.onLine) {
-        networkText.textContent = "Online";
-        networkText.className = "online";
-        checkServerStatus(); // Cek server saat online
-    } else {
-        networkText.textContent = "Offline";
-        networkText.className = "offline";
+// Fungsi untuk mengecek status server
+async function cekStatusServer() {
+    try {
+        const response = await fetch('/server/status');
+        if (!response.ok) throw new Error('Gagal mendapatkan respons dari server.');
+
+        const data = await response.json();
+        document.getElementById('status-server').innerHTML = `<span class="online-mode">Status Server: ${data.status}</span>`;
+        document.getElementById('uptime').innerText = `Uptime: ${data.uptime}`;
+    } catch (error) {
+        document.getElementById('status-server').innerHTML = '<span class="offline-mode">Server tidak merespons.</span>';
+        document.getElementById('uptime').innerText = 'Uptime: -';
     }
 }
 
-function checkServerStatus() {
-    fetch('/server/status')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Tidak bisa mendapat respons dari server');
-            }
-            return response.json();
-        })
-        .then(data => {
-            document.getElementById("server-text").textContent = data.status;
-            document.getElementById("server-text").className = data.status === "Online" ? "online" : "offline";
-            document.getElementById("uptime-text").textContent = data.uptime;
-        })
-        .catch(error => {
-            document.getElementById("server-text").textContent = "Gagal terhubung";
-            document.getElementById("server-text").className = "offline";
-            document.getElementById("uptime-text").textContent = "-";
-        });
+// Fungsi untuk mengecek status koneksi
+function cekStatusKoneksi() {
+    if (navigator.onLine) {
+        document.getElementById('status-koneksi').innerHTML = '<span class="online-mode">Koneksi Online</span>';
+        cekStatusServer();
+    } else {
+        document.getElementById('status-koneksi').innerHTML = '<span class="offline-mode">Koneksi Offline</span>';
+        document.getElementById('status-server').innerHTML = '<span class="offline-mode">Tidak dapat terhubung ke server.</span>';
+        document.getElementById('uptime').innerText = 'Uptime: -';
+    }
 }
 
-// Event listener untuk perubahan status jaringan
-window.addEventListener("online", updateNetworkStatus);
-window.addEventListener("offline", updateNetworkStatus);
+// Event Listener untuk perubahan status koneksi
+window.addEventListener('online', () => {
+    alert('Kamu kembali online!');
+    cekStatusKoneksi();
+    location.reload(); // Restart ke awal
+});
 
-// Cek status awal saat halaman dimuat
-updateNetworkStatus();
-checkServerStatus();
+window.addEventListener('offline', () => {
+    alert('Kamu sedang offline!');
+    cekStatusKoneksi();
+});
 
-// Cek status server secara berkala (misalnya setiap 30 detik)
-setInterval(checkServerStatus, 30000);
+// Cek status saat pertama kali halaman dimuat
+document.addEventListener('DOMContentLoaded', cekStatusKoneksi);
