@@ -21202,15 +21202,6 @@ div.tagsinput {
     color: #555;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    height: 200vh; /* Biar ada scroll */
-    background-color: #f9f9f9;
-}
-
 .scroll-indicator {
     font-size: 30px;
     margin-top: 20px;
