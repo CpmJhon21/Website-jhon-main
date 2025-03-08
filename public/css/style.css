@@ -21202,5 +21202,38 @@ div.tagsinput {
     color: #555;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 200vh; /* Biar ada scroll */
+    background-color: #f9f9f9;
+}
+
+.scroll-indicator {
+    font-size: 30px;
+    margin-top: 20px;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+}
+
+.dino-container {
+    position: fixed;
+    bottom: -100px; /* Mulai dari luar layar */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: bottom 0.5s ease-in-out;
+}
+
+.dino {
+    width: 80px;
+}
+
+
 
 /*# sourceMappingURL=maps/style.css.map */
