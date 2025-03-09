@@ -1,14 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
     let dinoContainer = document.querySelector(".dino-container");
 
-    function checkScroll() {
-        let dinoPosition = dinoContainer.getBoundingClientRect().top;
-        let windowHeight = window.innerHeight;
+    window.addEventListener("scroll", function () {
+        let scrollTop = window.scrollY; // Posisi scroll
+        let moveDistance = scrollTop * 0.5; // Sesuaikan kecepatan gerak Dino
 
-        if (dinoPosition < windowHeight - 100) {
-            dinoContainer.classList.add("show"); // Aktifkan animasi
-        }
-    }
-
-    window.addEventListener("scroll", checkScroll);
+        dinoContainer.style.transform = `translateX(${moveDistance}px)`;
+    });
 });
