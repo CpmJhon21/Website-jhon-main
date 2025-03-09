@@ -21205,22 +21205,39 @@ div.tagsinput {
 .dino-wrapper {
     position: relative;
     width: 100%;
-    height: 300px; /* Tinggi area tampilan */
+    height: 200px;
     overflow: hidden;
 }
 
 .dino-container {
     position: absolute;
     bottom: 0;
-    left: 0; /* Mulai dari kiri */
+    left: -100px; /* Awal di luar layar kiri */
     width: 100px;
-    transition: transform 0.1s linear; /* Supaya smooth saat discroll */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.dino-container.show {
+    opacity: 1;
 }
 
 .dino {
     width: 100%;
     height: auto;
+    transition: transform 2s linear;
 }
+
+/* Bergerak ke kanan */
+.move-right {
+    transform: translateX(100vw) scaleX(1);
+}
+
+/* Bergerak ke kiri (balik badan) */
+.move-left {
+    transform: translateX(-100px) scaleX(-1);
+}
+
 
 
 
