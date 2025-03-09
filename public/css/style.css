@@ -21202,25 +21202,24 @@ div.tagsinput {
     color: #555;
 }
 
-.scroll-indicator {
-    font-size: 30px;
-    margin-top: 20px;
-    animation: bounce 1s infinite alternate;
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Hindari scroll horizontal */
+    background-color: #111; /* Warna latar belakang */
 }
 
-@keyframes bounce {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(10px); }
-}
-
+/* Kontainer Dino */
 .dino-container {
-    position: fixed;
-    bottom: -100px; /* Mulai dari luar layar */
-    left: 50%;
-    transform: translateX(-50%);
-    transition: bottom 0.5s ease-in-out;
+    position: fixed; /* Agar selalu di layar */
+    bottom: 50px; /* Jarak dari bawah */
+    left: 0; /* Mulai dari kiri */
+    width: 100px; /* Ukuran awal */
+    z-index: 9999; /* Pastikan Dino di atas */
+    transition: left 0.3s linear; /* Animasi bergerak */
 }
 
+/* Gambar Dino */
 .dino {
     width: 80px;
 }
