@@ -21202,56 +21202,98 @@ div.tagsinput {
     color: #555;
 }
 
+/* Latar belakang */
 body {
-    margin: 0;
-    overflow: hidden;
     background-color: #87CEEB;
+    overflow: hidden;
+    margin: 0;
 }
 
-.game-container {
-    position: relative;
-    width: 100vw;
-    height: 300px;
-    background-color: #F4A460;
-    border-bottom: 4px solid #654321;
-}
-
-.score {
+/* Awan */
+.sky {
     position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
+    width: 100%;
+    height: 100px;
+    top: 20px;
+}
+
+.cloud {
+    position: absolute;
+    width: 120px;
+    height: 70px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: moveCloud 10s linear infinite;
+}
+
+.cloud2 {
+    top: 50px;
+    width: 150px;
+    animation-duration: 12s;
+}
+
+@keyframes moveCloud {
+    0% {
+        left: 100vw;
+    }
+    100% {
+        left: -150px;
+    }
+}
+
+/* Dino */
+.dino-wrapper {
+    position: relative;
+    width: 100%;
+    height: 300px;
+}
+
+.dino-container {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100px;
+    opacity: 1;
+    animation: moveDino 5s linear infinite alternate;
 }
 
 .dino {
+    width: 100%;
+    height: auto;
+}
+
+@keyframes moveDino {
+    0% {
+        transform: translateX(0px) scaleX(1);
+    }
+    100% {
+        transform: translateX(100vw) scaleX(-1);
+    }
+}
+
+/* Burung */
+.bird-container {
     position: absolute;
-    bottom: 20px;
-    left: 50px;
-    width: 50px;
-    height: 50px;
-    background-color: green;
-    border-radius: 10px;
+    top: 50px;
+    right: 0;
+    width: 80px;
+    opacity: 1;
+    animation: moveBird 6s linear infinite alternate;
 }
 
-.cactus {
-    position: absolute;
-    bottom: 20px;
-    right: -50px;
-    width: 30px;
-    height: 50px;
-    background-color: brown;
+.bird {
+    width: 100%;
+    height: auto;
 }
 
-.jump {
-    animation: jump 0.5s ease-out;
-}
-
-@keyframes jump {
-    0% { bottom: 20px; }
-    50% { bottom: 120px; }
-    100% { bottom: 20px; }
+@keyframes moveBird {
+    0% {
+        transform: translateX(100vw) scaleX(1);
+    }
+    100% {
+        transform: translateX(0px) scaleX(-1);
+    }
 }
 
 
