@@ -21204,13 +21204,16 @@ div.tagsinput {
 
 @keyframes moveDino {
     0% {
-        transform: translateX(-10px);
+        transform: translateX(-10px) scaleX(1);
     }
     50% {
-        transform: translateX(100vw);
+        transform: translateX(100vw) scaleX(1);
+    }
+    51% {
+        transform: translateX(100vw) scaleX(-1); /* Balik badan */
     }
     100% {
-        transform: translateX(-10px);
+        transform: translateX(-10px) scaleX(-1);
     }
 }
 
@@ -21238,6 +21241,7 @@ div.tagsinput {
     width: 100%;
     height: auto;
 }
+
 
 
 
