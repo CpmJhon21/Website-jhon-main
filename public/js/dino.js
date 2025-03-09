@@ -11,11 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
             dinoContainer.classList.add("show");
 
             if (currentScrollY > lastScrollY) {
-                // Scroll ke bawah → Dino jalan ke kanan
                 dinoContainer.classList.remove("move-left");
                 dinoContainer.classList.add("move-right");
             } else {
-                // Scroll ke atas → Dino balik dan jalan ke kiri
                 dinoContainer.classList.remove("move-right");
                 dinoContainer.classList.add("move-left");
             }
@@ -26,5 +24,5 @@ document.addEventListener("DOMContentLoaded", function () {
         lastScrollY = currentScrollY;
     }
 
-    window.addEventListener("scroll", checkScroll);
+    window.addEventListener("scroll", () => requestAnimationFrame(checkScroll));
 });
