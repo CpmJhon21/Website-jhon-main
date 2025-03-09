@@ -21202,44 +21202,56 @@ div.tagsinput {
     color: #555;
 }
 
-@keyframes moveDino {
-    0% {
-        transform: translateX(-10px) scaleX(1);
-    }
-    50% {
-        transform: translateX(100vw) scaleX(1);
-    }
-    51% {
-        transform: translateX(100vw) scaleX(-1); /* Balik badan */
-    }
-    100% {
-        transform: translateX(-10px) scaleX(-1);
-    }
-}
-
-.dino-wrapper {
-    position: relative;
-    width: 100%;
-    height: 200px; /* Sesuaikan tinggi */
+body {
+    margin: 0;
     overflow: hidden;
+    background-color: #87CEEB;
 }
 
-.dino-container {
+.game-container {
+    position: relative;
+    width: 100vw;
+    height: 300px;
+    background-color: #F4A460;
+    border-bottom: 4px solid #654321;
+}
+
+.score {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100px;
-    opacity: 0;
-}
-
-.dino-container.active {
-    opacity: 1;
-    animation: moveDino 5s linear infinite;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
 }
 
 .dino {
-    width: 100%;
-    height: auto;
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    border-radius: 10px;
+}
+
+.cactus {
+    position: absolute;
+    bottom: 20px;
+    right: -50px;
+    width: 30px;
+    height: 50px;
+    background-color: brown;
+}
+
+.jump {
+    animation: jump 0.5s ease-out;
+}
+
+@keyframes jump {
+    0% { bottom: 20px; }
+    50% { bottom: 120px; }
+    100% { bottom: 20px; }
 }
 
 
