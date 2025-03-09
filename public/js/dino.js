@@ -1,16 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
-    let dino = document.querySelector(".dino-container");
-    let triggerPoint = 300; // Dino muncul saat scroll lebih dari 300px
+    let dinoContainer = document.querySelector(".dino-container");
 
-    // Pastikan dino awalnya tidak terlihat
-    dino.style.display = "none";
+    function checkScroll() {
+        let dinoPosition = dinoContainer.getBoundingClientRect().top;
+        let windowHeight = window.innerHeight;
 
-    // Fungsi untuk mengecek scroll
-    window.addEventListener("scroll", function () {
-        if (window.scrollY > triggerPoint) {
-            dino.style.display = "block"; // Munculkan Dino
-        } else {
-            dino.style.display = "none"; // Sembunyikan jika kembali ke atas
+        if (dinoPosition < windowHeight - 100) {
+            dinoContainer.classList.add("show"); // Aktifkan animasi
         }
-    });
+    }
+
+    window.addEventListener("scroll", checkScroll);
 });
