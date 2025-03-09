@@ -21211,12 +21211,12 @@ body {
 
 /* Kontainer Dino */
 .dino-container {
-    position: fixed; /* Agar selalu di layar */
-    bottom: 50px; /* Jarak dari bawah */
-    left: 0; /* Mulai dari kiri */
-    width: 100px; /* Ukuran awal */
-    z-index: 9999; /* Pastikan Dino di atas */
-    transition: left 0.3s linear; /* Animasi bergerak */
+  position: absolute; /* Tetap di satu tempat */
+    left: 50px; /* Atur posisi horizontal */
+    bottom: 50px; /* Pastikan Dino ada di bawah */
+    width: 100px; /* Ukuran Dino */
+    height: auto;
+    display: none; /* Sembunyikan di awal */
 }
 
 /* Gambar Dino */
